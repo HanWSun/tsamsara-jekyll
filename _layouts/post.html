@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<h1>{{page.title}}</h1>
+<p>
+    {{page.date}} - {{page.author}}
+    {%assign author = site.authors | where: 'short_name', page.author | first%}
+    <!--this is just confirming there is an author found above-->
+    {%if author%}
+        <!--author is from site.authors and jekyll auto assigns the url based on the name-->
+        - <a href={{author.url}}>{{author.name}}</a>
+    {%endif%}
+</p>
+
+{{content}}

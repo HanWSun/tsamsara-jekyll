@@ -1,0 +1,8 @@
+<nav>
+    {% for item in site.data.navigation%}
+        <!--data maps to data folder. navigation maps to navigation.yml. in yml, each entry has name and link kv pair-->
+        <a href="{{ item.link }}" {% if page.url == item.link %} class="current" {%endif%} >
+            {{ item.name }}
+        </a>
+    {% endfor%}
+</nav>
